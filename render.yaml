@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: nba-obtl-api
+    runtime: node
+    rootDir: nba-obtl/server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CLIENT_URL
+        sync: false
+      - key: UPLOAD_BASE_URL
+        sync: false
+
+  - type: static
+    name: nba-obtl-web
+    rootDir: nba-obtl/client
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        sync: false
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
