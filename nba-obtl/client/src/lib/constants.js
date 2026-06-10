@@ -36,6 +36,13 @@ export const criterionSections = [
     maxMarks: 20,
     description:
       "Document quality-focused teaching processes, pedagogy, implementation evidence, and measurable impact.",
+    rubric: [
+      "Adherence to academic calendar (4)",
+      "Pedagogical initiatives (5)",
+      "Support for students based on ability (4)",
+      "Quality of classroom teaching (4)",
+      "Conduct of assessments (3)"
+    ],
     emptyEntry: {
       title: "",
       process: "",
@@ -43,6 +50,7 @@ export const criterionSections = [
       implementation: "",
       impact: "",
       impactQuality: "",
+      assessmentPractice: "",
       date: "",
       proof: null,
       proofFile: null
@@ -66,6 +74,12 @@ export const criterionSections = [
       { name: "implementation", label: "Implementation", type: "textarea", placeholder: "How was it implemented?" },
       { name: "impact", label: "Impact", type: "textarea", placeholder: "Observed student impact" },
       { name: "impactQuality", label: "Impact Quality", type: "select", options: ["low", "medium", "high"] },
+      {
+        name: "assessmentPractice",
+        label: "Assessment Practice",
+        type: "textarea",
+        placeholder: "How were quizzes, assignments, or classroom assessments conducted?"
+      },
       { name: "date", label: "Date", type: "date" },
       { name: "proof", label: "PDF Proof", type: "file" }
     ]
@@ -77,12 +91,21 @@ export const criterionSections = [
     maxMarks: 25,
     description:
       "Capture project quality, sustainability integration, working prototypes, and PO/PSO coverage.",
+    rubric: [
+      "Project identification and guide allocation (5)",
+      "Project type and relevance to sustainability/standards (10)",
+      "Continuous monitoring process (4)",
+      "Quality of completed projects or prototypes (6)"
+    ],
     emptyEntry: {
       title: "",
       projectType: "",
       sustainability: "",
       prototype: "",
       description: "",
+      guideAllocation: "",
+      standardsConsidered: "",
+      monitoringProcess: "",
       poPso: [],
       proof: null,
       proofFile: null
@@ -103,6 +126,24 @@ export const criterionSections = [
       },
       { name: "prototype", label: "Prototype Available", type: "select", options: ["yes", "no"] },
       { name: "description", label: "Project Description", type: "textarea" },
+      {
+        name: "guideAllocation",
+        label: "Guide Allocation / Allotment",
+        type: "textarea",
+        placeholder: "Mention guide allotment, project identification, or team allocation process"
+      },
+      {
+        name: "standardsConsidered",
+        label: "Standards / Constraints Considered",
+        type: "textarea",
+        placeholder: "Mention environment, safety, ethics, cost, standards, or sustainability considerations"
+      },
+      {
+        name: "monitoringProcess",
+        label: "Monitoring Process",
+        type: "textarea",
+        placeholder: "Describe review meetings, milestones, or continuous monitoring"
+      },
       { name: "poPso", label: "PO / PSO", type: "multiselect", options: poPsoOptions },
       { name: "proof", label: "PDF Proof", type: "file" }
     ]
@@ -113,11 +154,19 @@ export const criterionSections = [
     title: "Internship / Industrial Training",
     maxMarks: 10,
     description: "Track company, duration, student skills, completion, and certificate evidence.",
+    rubric: [
+      "Internship / industrial training process (3)",
+      "PO / PSO mapping of training (4)",
+      "Student feedback and analysis (3)"
+    ],
     emptyEntry: {
       company: "",
       durationWeeks: "",
       skills: "",
       completed: "",
+      processStructured: "",
+      poPso: [],
+      feedbackAnalysis: "",
       startDate: "",
       endDate: "",
       proof: null,
@@ -128,6 +177,19 @@ export const criterionSections = [
       { name: "durationWeeks", label: "Duration (Weeks)", type: "number" },
       { name: "skills", label: "Skills Developed", type: "textarea" },
       { name: "completed", label: "Completed", type: "select", options: ["yes", "no"] },
+      {
+        name: "processStructured",
+        label: "Training Process",
+        type: "select",
+        options: ["well-defined", "formal", "basic"]
+      },
+      { name: "poPso", label: "PO / PSO", type: "multiselect", options: poPsoOptions },
+      {
+        name: "feedbackAnalysis",
+        label: "Student Feedback / Analysis",
+        type: "textarea",
+        placeholder: "Summarize internship feedback or analysis from students"
+      },
       { name: "startDate", label: "Start Date", type: "date" },
       { name: "endDate", label: "End Date", type: "date" },
       { name: "proof", label: "Certificate / PDF Proof", type: "file" }
@@ -139,10 +201,15 @@ export const criterionSections = [
     title: "Seminar / Mini Projects",
     maxMarks: 10,
     description: "Add seminar or mini-project activities with course mapping and PO/PSO alignment.",
+    rubric: [
+      "Seminar mapping with POs / PSOs (5)",
+      "Magnitude and contribution of mini / micro projects (5)"
+    ],
     emptyEntry: {
       topic: "",
       course: "",
       seminarType: "",
+      projectMagnitude: "",
       poPso: [],
       eventDate: "",
       proof: null,
@@ -157,6 +224,12 @@ export const criterionSections = [
         type: "select",
         options: ["Seminar", "Mini Project", "Micro Project"]
       },
+      {
+        name: "projectMagnitude",
+        label: "Project Magnitude",
+        type: "select",
+        options: ["low", "medium", "high"]
+      },
       { name: "poPso", label: "PO / PSO", type: "multiselect", options: poPsoOptions },
       { name: "eventDate", label: "Date", type: "date" },
       { name: "proof", label: "PDF Proof", type: "file" }
@@ -168,6 +241,7 @@ export const criterionSections = [
     title: "Case Studies / Real-Life Examples",
     maxMarks: 10,
     description: "Highlight real-life case usage with complexity and outcome-oriented mapping.",
+    rubric: ["Use of case studies / real-life examples with PO / PSO mapping (10)"],
     emptyEntry: {
       title: "",
       type: "",
@@ -197,11 +271,16 @@ export const criterionSections = [
     title: "SWAYAM / NPTEL / MOOC",
     maxMarks: 10,
     description: "Capture platform usage, certifications, student participation, and PO/PSO mapping.",
+    rubric: [
+      "Students certified in MOOCs with PO / PSO mapping (7)",
+      "Scope for self-learning and facilities / resources (3)"
+    ],
     emptyEntry: {
       platform: "",
       courseName: "",
       certification: "",
       learnersCount: "",
+      resourceSupport: "",
       poPso: [],
       proof: null,
       proofFile: null
@@ -216,6 +295,12 @@ export const criterionSections = [
       { name: "courseName", label: "Course Name", type: "text" },
       { name: "certification", label: "Certification", type: "select", options: ["yes", "no"] },
       { name: "learnersCount", label: "Learners Count", type: "number" },
+      {
+        name: "resourceSupport",
+        label: "Self-learning Resources / Support",
+        type: "textarea",
+        placeholder: "Describe facilities, mentoring, or resources provided for self-learning"
+      },
       { name: "poPso", label: "PO / PSO", type: "multiselect", options: poPsoOptions },
       { name: "proof", label: "PDF Proof", type: "file" }
     ]
@@ -227,6 +312,7 @@ export const criterionSections = [
     maxMarks: 20,
     description:
       "Document problem-based learning, hackathons, SDG mapping, and real-world sustainability outcomes.",
+    rubric: ["Use of complex engineering problems from courses / activities along with targeted SDGs (20)"],
     emptyEntry: {
       title: "",
       activityType: "",
@@ -258,6 +344,12 @@ export const criterionSections = [
     title: "Industry Institute Interaction",
     maxMarks: 15,
     description: "Track collaborations, training, expert sessions, and quality of industry partnership outcomes.",
+    rubric: [
+      "Industry involvement in partial delivery of regular courses (5)",
+      "Industry offered courses / training (4)",
+      "Industry supported laboratories (3)",
+      "Industry / alumni as experts (3)"
+    ],
     emptyEntry: {
       industryName: "",
       activityType: "",
@@ -273,7 +365,14 @@ export const criterionSections = [
         name: "activityType",
         label: "Activity Type",
         type: "select",
-        options: ["Guest Lecture", "Training", "Lab Support", "Joint Project", "Partial Course Delivery"]
+        options: [
+          "Guest Lecture",
+          "Training",
+          "Lab Support",
+          "Joint Project",
+          "Partial Course Delivery",
+          "Industry Alumni Session"
+        ]
       },
       { name: "outcome", label: "Outcome", type: "textarea" },
       {

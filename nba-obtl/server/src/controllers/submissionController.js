@@ -22,6 +22,7 @@ const createDemoSections = () => ({
       implementation: "Peer-learning groups, flipped classroom discussions, and guided worksheets were used in core theory classes.",
       impact: "Student participation improved, slower learners received support, and unit test performance increased steadily across the semester.",
       impactQuality: "high",
+      assessmentPractice: "Outcome-based quizzes, tutorial assignments, and remedial assessments were conducted after each unit.",
       date: "2026-02-12"
     },
     {
@@ -31,6 +32,7 @@ const createDemoSections = () => ({
       implementation: "Case snippets from manufacturing, IoT systems, and software deployment were used during lectures and tutorials.",
       impact: "Students connected abstract concepts with practical application and produced stronger analytical responses in assessments.",
       impactQuality: "high",
+      assessmentPractice: "Case-based questions and lab evaluations were embedded in internal assessments.",
       date: "2026-03-03"
     }
   ],
@@ -41,6 +43,9 @@ const createDemoSections = () => ({
       sustainability: "strong",
       prototype: "yes",
       description: "Final-year team developed an IoT-enabled prototype to monitor pH, turbidity, and temperature for sustainable water usage.",
+      guideAllocation: "Project guide allotted at the start of semester based on domain expertise and approved proposal review.",
+      standardsConsidered: "Water quality standards, sustainability goals, safety, ethics, and implementation cost were considered.",
+      monitoringProcess: "Weekly guide meetings, monthly review panels, and prototype milestone checks were followed.",
       poPso: ["PO1", "PO3", "PO5", "PO7", "PSO1"]
     },
     {
@@ -49,6 +54,9 @@ const createDemoSections = () => ({
       sustainability: "strong",
       prototype: "yes",
       description: "Students built a data dashboard to analyze classroom energy usage and recommend energy-saving actions.",
+      guideAllocation: "Team and guide allotment were completed after problem identification and proposal screening.",
+      standardsConsidered: "Energy efficiency, sustainability impact, feasibility, standards, and cost optimization were mapped.",
+      monitoringProcess: "Guide reviews, sprint-based tracking, and departmental progress presentations were maintained.",
       poPso: ["PO2", "PO4", "PO7", "PO10", "PSO2"]
     }
   ],
@@ -58,6 +66,9 @@ const createDemoSections = () => ({
       durationWeeks: 8,
       skills: "Web application development, agile workflow, API integration, documentation, testing",
       completed: "yes",
+      processStructured: "well-defined",
+      poPso: ["PO5", "PO9", "PO10", "PSO2"],
+      feedbackAnalysis: "Students reported improvement in teamwork, coding confidence, and understanding of industry workflow.",
       startDate: "2025-05-20",
       endDate: "2025-07-15"
     },
@@ -66,6 +77,9 @@ const createDemoSections = () => ({
       durationWeeks: 6,
       skills: "Cloud fundamentals, Python automation, team collaboration, presentation",
       completed: "yes",
+      processStructured: "formal",
+      poPso: ["PO5", "PO10", "PO11", "PSO1"],
+      feedbackAnalysis: "Training feedback analysis showed better practical confidence and exposure to professional tools.",
       startDate: "2025-06-10",
       endDate: "2025-07-25"
     }
@@ -75,6 +89,7 @@ const createDemoSections = () => ({
       topic: "Design Thinking for Smart Manufacturing",
       course: "Industry 4.0",
       seminarType: "Seminar",
+      projectMagnitude: "medium",
       poPso: ["PO3", "PO9", "PO10"],
       eventDate: "2026-01-18"
     },
@@ -82,6 +97,7 @@ const createDemoSections = () => ({
       topic: "Mini Project on Automated Attendance Analytics",
       course: "Database Management Systems",
       seminarType: "Mini Project",
+      projectMagnitude: "high",
       poPso: ["PO1", "PO2", "PO5", "PSO2"],
       eventDate: "2026-02-28"
     }
@@ -108,6 +124,7 @@ const createDemoSections = () => ({
       courseName: "Introduction to Industry 4.0 and Industrial Internet of Things",
       certification: "yes",
       learnersCount: 42,
+      resourceSupport: "Faculty mentoring, LMS guidance, and lab internet access were provided for self-learning.",
       poPso: ["PO1", "PO5", "PO12", "PSO1"]
     },
     {
@@ -115,6 +132,7 @@ const createDemoSections = () => ({
       courseName: "Project Management for Engineers",
       certification: "yes",
       learnersCount: 35,
+      resourceSupport: "Students received schedule tracking, discussion support, and access to department learning resources.",
       poPso: ["PO9", "PO10", "PO11"]
     }
   ],

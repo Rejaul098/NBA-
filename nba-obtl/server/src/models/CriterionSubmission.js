@@ -22,6 +22,7 @@ const teachingLearningSchema = new mongoose.Schema(
     implementation: String,
     impact: String,
     impactQuality: String,
+    assessmentPractice: String,
     date: String,
     proof: proofSchema
   },
@@ -35,6 +36,9 @@ const capstoneSchema = new mongoose.Schema(
     sustainability: String,
     prototype: String,
     description: String,
+    guideAllocation: String,
+    standardsConsidered: String,
+    monitoringProcess: String,
     poPso: [String],
     proof: proofSchema
   },
@@ -47,6 +51,9 @@ const internshipSchema = new mongoose.Schema(
     durationWeeks: Number,
     skills: String,
     completed: String,
+    processStructured: String,
+    poPso: [String],
+    feedbackAnalysis: String,
     startDate: String,
     endDate: String,
     proof: proofSchema
@@ -59,6 +66,7 @@ const seminarSchema = new mongoose.Schema(
     topic: String,
     course: String,
     seminarType: String,
+    projectMagnitude: String,
     poPso: [String],
     eventDate: String,
     proof: proofSchema
@@ -84,6 +92,7 @@ const moocSchema = new mongoose.Schema(
     courseName: String,
     certification: String,
     learnersCount: Number,
+    resourceSupport: String,
     poPso: [String],
     proof: proofSchema
   },
@@ -155,6 +164,10 @@ const criterionSubmissionSchema = new mongoose.Schema(
         moocs: { type: Number, default: 0 },
         problemSolving: { type: Number, default: 0 },
         industryInteraction: { type: Number, default: 0 }
+      },
+      sectionBreakdowns: {
+        type: mongoose.Schema.Types.Mixed,
+        default: {}
       },
       total: { type: Number, default: 0 },
       completion: {

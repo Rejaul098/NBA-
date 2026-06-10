@@ -85,6 +85,16 @@ function SectionForm({ section, submission, onUpdated }) {
           <p className="mt-1 text-xs font-medium uppercase tracking-[0.2em] text-slate-400">
             Max Marks {section.maxMarks}
           </p>
+          {section.rubric?.length ? (
+            <div className="mt-3 rounded-2xl border border-slate-200 bg-white px-4 py-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Rubric Breakdown</p>
+              <ul className="mt-2 space-y-1 text-sm text-slate-600">
+                {section.rubric.map((item) => (
+                  <li key={item}>- {item}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </div>
         <button type="button" onClick={addEntry} className="button-secondary gap-2">
           <Plus className="h-4 w-4" />
